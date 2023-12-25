@@ -16,9 +16,9 @@ const betBtn = document.getElementById('bet-btn')
 const cashoutBtn = document.getElementById('cashout-btn')
 const creditCont = document.getElementById('credit')
 
-const bombSound = new Audio('assets/sounds/bomb.mp3');
-const ballSound = new Audio('assets/sounds/ballKicks.mp3');
-const winSound = new Audio('assets/sounds/win.mp3');
+const bombSound = new Audio('assets/sounds/bomb.mp3')
+const ballSound = new Audio('assets/sounds/ballKicks.mp3')
+const winSound = new Audio('assets/sounds/win.mp3')
 
 
 let bet = 2.00
@@ -64,7 +64,7 @@ addActiveStatus(largeBoardBtn, largeBoard)
 incrBet.addEventListener('click', () => {
     if(bet === 100) return
     bet = parseFloat((parseFloat(betAmount.value) + 0.1).toFixed(2))
-    bet = Math.min(bet, 100);
+    bet = Math.min(bet, 100)
     betAmount.value = bet.toFixed(2)
 })
 
@@ -95,9 +95,9 @@ presetAmounts.forEach(eachAmount => {
             presetFirstClick = false
             prevPreset = currPreset
         }else{
-            bet = parseFloat(betAmount.value);
-            bet += amountNumericValue;
-            bet = Math.min(bet, 100);
+            bet = parseFloat(betAmount.value)
+            bet += amountNumericValue
+            bet = Math.min(bet, 100)
             betAmount.value = bet.toFixed(2)
         }
 
@@ -113,7 +113,7 @@ let activeBox = null
 let gameLost = false
 let loss = 0 
 let gain = 0
-let boxEventHandlers = [];
+let boxEventHandlers = []
 
 betBtn.addEventListener('click', () => {
     columnIndex = 0
@@ -142,7 +142,7 @@ betBtn.addEventListener('click', () => {
     settContainer.classList.add('inactive')
     columns[columnIndex].classList.add('active')
 
- });
+ })
  
 
  function selectBox(boxes, columns, columnIndex, multiplierRates){
@@ -188,6 +188,7 @@ betBtn.addEventListener('click', () => {
                 settContainer.classList.remove('inactive')
                 bombPlaces = []
  
+                //winning the game
                 gameLost = false
                 let lastMult = multiplierRates[columns.length-1].innerText.slice(1)
                 lastMult = parseFloat(lastMult)
@@ -201,11 +202,11 @@ betBtn.addEventListener('click', () => {
                 columns[columnIndex].classList.add('active')
                 multiplierRates[columnIndex].classList.add('active')
             }
-        };
+        }
  
-        box.addEventListener('click', handler);
+        box.addEventListener('click', handler)
  
-        boxEventHandlers[index] = handler;
+        boxEventHandlers[index] = handler
     })
  }
 
@@ -261,8 +262,7 @@ betBtn.addEventListener('click', () => {
 
  function resetGame(columns){
     document.querySelectorAll('.bomb').forEach(bomb => bomb.remove())
-    columns.forEach(each => each.classList.remove('inactive'))
-    columns.forEach(each => each.classList.remove('active'))
+    columns.forEach(each => each.classList.remove('inactive', 'active'))
     document.querySelectorAll('.ball').forEach(ball => ball.remove())
 
     bombPlaces = []
