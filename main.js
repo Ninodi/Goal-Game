@@ -177,7 +177,6 @@ betBtn.addEventListener('click', () => {
                 addExplosion(box)
                 columns.forEach(each => each.classList.add('inactive'))
                 columns.forEach(each => each.classList.remove('active'))
-                // multiplierRates[columnIndex+1].classList.remove('active')
                 console.log(multiplierRates)
                 gameLost = true
                 boxes.forEach((box, index) => {
@@ -274,7 +273,7 @@ betBtn.addEventListener('click', () => {
 
  cashoutBtn.addEventListener('click', () => {
 
-    creditCont.innerText = `${credit + gain}$`
+    creditCont.innerText = `${(credit + gain).toFixed(2)}$`
     betBtn.style.display = 'flex'
     cashoutBtn.style.display = 'none'
     settContainer.classList.remove('inactive')
