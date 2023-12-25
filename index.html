@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Goal Game</title>
+</head>
+<body>
+    <div class="app-container">
+        <div id="credit"></div>
+        <div class="betting-options">
+            <div class="settings-container">
+                <div class="bet-amount-container">
+                    <div class="manual-bet">
+                        <p>Bet amount $</p>
+                        <div class="manual-bet-setter">
+                            <div id="decrBet" class="inc-decr-btn">-</div>
+                            <input type="number" step=".010" value="2.00" id="bet-amount">
+                            <div id="incrBet" class="inc-decr-btn">+</div>
+                        </div>
+                    </div>
+                    <div class="preset-bets">
+                        <p class="preset-amount">1$</p>
+                        <p class="preset-amount">3$</p>
+                        <p class="preset-amount">5$</p>
+                        <p class="preset-amount">10$</p>
+                    </div>
+                </div>
+                <div class="board-size-changer">
+                    <p>Field Size</p>
+                    <div class="buttons-container">
+                        <div id="small-board">Small</div>
+                        <div id="medium-board">Medium</div>
+                        <div id="large-board">Large</div>
+                    </div>
+                </div>
+                <button id="bet-btn">Bet</button>
+            </div>        
+            <div id="cashout-btn">Cashout</div>
+        </div>
+        <div class="board-container">
+            <div class="small-board">
+                <div class="columns-container">
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                </div>
+                <div class="multiplier-rates">
+                    <p>x1.45</p>
+                    <p>x2.18</p>
+                    <p>x3.27</p>
+                    <p>x4.91</p>
+                </div>
+            </div>
+            <div class="medium-board">
+                <div class="columns-container">
+                    <div class="column">
+                        <div class="box">
+                        </div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                </div>
+                <div class="multiplier-rates">
+                    <p>x1.29</p>
+                    <p>x1.72</p>
+                    <p>x2.29</p>
+                    <p>x3.06</p>
+                    <p>x4.08</p>
+                    <p>x5.45</p>
+                    <p>x7.26</p>
+                </div>
+            </div>
+            <div class="large-board">
+                <div class="columns-container">
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="column">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                </div>
+                <div class="multiplier-rates">
+                    <p>x1.21</p>
+                    <p>x1.51</p>
+                    <p>x1.89</p>
+                    <p>x2.36</p>
+                    <p>x2.96</p>
+                    <p>x3.7</p>
+                    <p>x4.62</p>
+                    <p>x5.78</p>
+                    <p>x7.22</p>
+                    <p>x9.03</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

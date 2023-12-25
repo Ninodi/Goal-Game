@@ -1,0 +1,36 @@
+
+@mixin center()
+    display: flex
+    justify-content: center
+    align-items: center
+    @content
+
+@mixin verticalCenter()
+    @include center()
+    flex-direction: column
+    @content    
+
+
+@mixin plus450()
+    @media screen and (min-width: 450px)
+        @content
+
+@mixin plus700()
+    @media screen and (min-width: 700px)
+        @content
+
+@mixin plus769()
+    @media screen and (min-width: 769px)
+        @content
+
+@mixin plus1025()
+    @media screen and (min-width: 1279px)
+        @content
+
+@mixin plus1441()
+    @media screen and (min-width: 1441px)
+        @content
+
+// @mixin sizePlus($width)
+//     @media screen and (min-width: $width)
+//         @content

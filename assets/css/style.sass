@@ -1,0 +1,286 @@
+@import variables
+    
+*
+    padding: 0
+    margin: 0
+    text-decoration: none
+    list-style: none
+    box-sizing: border-box
+
+
+.app-container
+    min-height: 100vh
+    min-width: 100vw
+    display: flex
+    flex-direction: column-reverse
+    justify-content: center
+    align-items: center
+    padding: 10px
+    gap: 20px
+    padding-top: 60px
+    background: rgb(155,175,217)
+    background: radial-gradient(circle, rgba(155,175,217,1) 0%, rgba(16,55,131,1) 100%, rgba(159,46,251,0.711922268907563) 100%)
+    @include plus1025()
+        flex-direction: row
+        padding: 100px
+        gap: 50px
+        padding-top: 10px
+
+
+.board-container    
+    // border: 1px solid blue
+    max-width: 550px
+    width: 100%
+    height: 300px
+    @include plus1025()
+        width: 50%
+
+.betting-options
+    // border: 1px solid green
+    max-width: 500px
+    width: 80%
+    @include verticalCenter()
+    gap: 20px
+    @include plus1025()
+        width: 30%
+
+.settings-container 
+    width: 100%
+    height: 100%
+    @include verticalCenter()
+    gap: 20px
+    &.inactive
+        pointer-events: none
+        opacity: 70%
+    
+.columns-container
+    width: 100%
+    height: 100%
+    display: flex
+    gap: 5px
+
+
+.column
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    gap: 5px
+    pointer-events: none
+    .box    
+        // min-width: 32px
+        min-height: 50px
+        height: 50px
+        width: 100%
+        background-color: rgba(#000080, 30%)
+        border-radius: 15px
+        flex-grow: 1
+        cursor: pointer
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px
+        @include center()
+        
+    &.active
+        pointer-events: auto
+        .box
+            background-color: rgba(#fff, 40%)
+    &.inactive
+        .box
+            background-color: rgba(#fff, 20%)
+
+
+.large-board, .medium-board, .small-board  
+    width: 100%
+    height: 100%
+    display: none
+    gap: 10px
+    @include verticalCenter()
+    display: none
+    &.active
+        display: flex
+
+.multiplier-rates
+    width: 100%
+    display: flex
+    justify-content: space-around
+    gap: 5px
+    p
+        width: 60px
+        height: 20px
+        border-radius: 30px
+        background-color: rgba(black, 60%)
+        color: #fff
+        font-size: 12px
+        @include center()
+        @include plus450()
+            font-size: 14px
+        &.active
+            background-color: #fff
+            color: black
+
+        
+    
+
+.board-size-changer
+    width: 100%
+    background-color: rgba(black, 50%)
+    @include verticalCenter()
+    padding: 10px
+    border-radius: 5px
+    p
+        color: #fff
+        margin-bottom: 15px
+    
+
+.buttons-container
+    width: 100%
+    @include center()
+    justify-content: space-around
+    gap: 5px
+    div
+       border: 1px solid rgba(#fff, 40%)
+       height: 40px
+       border-radius: 5px
+       @include center()
+       flex: 1
+       cursor: pointer
+       color: #fff
+       &.active
+        background-color: rgba(#fff, 40%)
+       
+.bet-amount-container
+    width: 100%
+    background-color: rgba(black, 50%)
+    @include center()
+    justify-content: space-around
+    padding: 10px
+    border-radius: 5px
+
+
+.manual-bet-setter
+    background-color: rgba(black, 50%)
+    @include center()
+    padding: 5px
+    border-radius: 5px
+    gap: 10px
+    input
+        background-color: transparent
+        border-style: none
+        width: 60px
+        text-align: center
+        font-size: 20px
+        color: #fff
+        &::-webkit-inner-spin-button
+            display: none
+        &::-webkit-outer-spin-button
+            display: none
+        &:focus
+            outline: none
+
+.manual-bet
+    p
+        color: #fff
+        margin-bottom: 10px
+        text-align: center
+
+
+.inc-decr-btn
+    color: #fff
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    border: 1px solid #fff
+    @include center()
+    align-items: unset  
+    cursor: pointer
+    margin: 0 auto
+
+
+.preset-bets
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 5px
+    p
+        width: 50px
+        height: 20px
+        color: #fff
+        border: 1px solid #fff
+        border-radius: 20px
+        font-size: 14px
+        @include center()
+        cursor: pointer
+        &:hover
+           background-color: rgba(#fff, 40%) 
+
+#bet-btn
+    width: 100%
+    text-transform: uppercase
+    background: rgb(0,27,68)
+    background: linear-gradient(83deg, rgba(0,27,68,1) 0%, rgba(8,91,254,1) 100%)
+    outline: none
+    border-style: none
+    color: #fff
+    border-radius: 5px
+    height: 40px
+    transition: all 0.3s ease-in
+    cursor: pointer
+    @include center()
+    
+    &:hover
+        background: rgb(8,91,254)
+        background: linear-gradient(90deg, rgba(8,91,254,1) 0%, rgba(0,27,68,1) 100%)
+
+#cashout-btn
+    width: 100%
+    text-transform: uppercase
+    background: #008080
+    // background: linear-gradient(83deg, rgba(0,27,68,1) 0%, rgba(8,91,254,1) 100%)
+    outline: none
+    border-style: none
+    color: #fff
+    border-radius: 5px
+    height: 40px
+    transition: all 0.3s ease-in
+    cursor: pointer
+    @include center()
+    display: none
+    
+
+.bomb
+    max-width: 40px
+    max-height: 50px
+    display: none
+    animation: zoomInOut 1.8s infinite
+
+@keyframes zoomInOut
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.1)
+  100%
+    transform: scale(1)
+
+.ball    
+    max-width: 40px
+    max-height: 50px
+    animation: roll 0.5s forwards
+
+@keyframes roll
+  0%
+    transform: translateX(-6px) rotate(0)
+  100%
+    transform: translateX(0px) rotate(90deg)
+
+#credit
+    max-width: 200px
+    width: 200px
+    height: 40px
+    @include center()
+    background-color: rgba(#fff, 60%)
+    border-radius: 0 0 20px 20px
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+
+
