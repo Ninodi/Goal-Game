@@ -306,6 +306,7 @@
 
 .bomb {
   max-width: 40px;
+  width: 100%;
   max-height: 50px;
   display: none;
   animation: zoomInOut 1.8s infinite;
@@ -324,6 +325,7 @@
 }
 .ball {
   max-width: 40px;
+  width: 100%;
   max-height: 50px;
   animation: roll 0.5s forwards;
 }
