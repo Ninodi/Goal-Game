@@ -155,7 +155,6 @@ betBtn.addEventListener('click', () => {
 
     boxes.forEach((box, index) => {
         let handler = (e) => {
-            console.log('index', columnIndex)
             gain = 0
             columns[columnIndex].classList.remove('active')
             columns[columnIndex].classList.add('inactive')
@@ -177,7 +176,7 @@ betBtn.addEventListener('click', () => {
                 addExplosion(box)
                 columns.forEach(each => each.classList.add('inactive'))
                 columns.forEach(each => each.classList.remove('active'))
-                console.log(multiplierRates)
+
                 gameLost = true
                 boxes.forEach((box, index) => {
                     box.removeEventListener('click', boxEventHandlers[index])
