@@ -172,6 +172,7 @@ betBtn.addEventListener('click', () => {
  
             let myChoice = Array.from(columns[columnIndex-1].querySelectorAll('.box')).indexOf(e.target)
             
+            //losing the game
             if(myChoice === bombPlaces[columnIndex-1]){
                 addExplosion(box)
                 columns.forEach(each => each.classList.add('inactive'))
@@ -184,11 +185,11 @@ betBtn.addEventListener('click', () => {
 
             }else addBall(box)
  
+            //winning the game
             if (columnIndex === columns.length) {
                 settContainer.classList.remove('inactive')
                 bombPlaces = []
  
-                //winning the game
                 gameLost = false
                 let lastMult = multiplierRates[columns.length-1].innerText.slice(1)
                 lastMult = parseFloat(lastMult)
